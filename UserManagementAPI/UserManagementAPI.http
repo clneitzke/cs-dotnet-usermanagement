@@ -1,0 +1,34 @@
+@UserManagementAPI_HostAddress = http://localhost:5298
+
+GET {{UserManagementAPI_HostAddress}}/openapi/v1.json
+Accept: application/json
+
+###
+
+GET {{UserManagementAPI_HostAddress}}/api/Users
+Accept: application/json
+
+###
+
+POST {{UserManagementAPI_HostAddress}}/api/Users
+Content-Type: application/json
+
+{
+    "name": "test - Name",
+    "email": "test - Email"
+}
+
+###
+
+PUT {{UserManagementAPI_HostAddress}}/api/Users/1
+Content-Type: application/json
+
+{
+    "name": "test - Name 1",
+    "email": "test - Email 1"
+}
+
+###
+
+DELETE {{UserManagementAPI_HostAddress}}/api/Users/1
+Content-Type: application/json
