@@ -15,7 +15,7 @@ Content-Type: application/json
 
 {
     "name": "test - Name",
-    "email": "test - Email"
+    "email": "test@email.ca"
 }
 
 ###
@@ -25,7 +25,7 @@ Content-Type: application/json
 
 {
     "name": "test - Name 1",
-    "email": "test - Email 1"
+    "email": "test1@email.ca"
 }
 
 ###
