@@ -1,18 +1,21 @@
 @UserManagementAPI_HostAddress = http://localhost:5298
-
+@SecretKey = your-secret-api-key-ABCDE
 ### OpenAPI Specification
 
 GET {{UserManagementAPI_HostAddress}}/openapi/v1.json
+Authorization: Bearer {{SecretKey}}
 Accept: application/json
 
 ### GET
 
 GET {{UserManagementAPI_HostAddress}}/api/Users
+Authorization: Bearer {{SecretKey}}
 Accept: application/json
 
 ### POST
 
 POST {{UserManagementAPI_HostAddress}}/api/Users
+Authorization: Bearer {{SecretKey}}
 Content-Type: application/json
 
 {
@@ -23,6 +26,7 @@ Content-Type: application/json
 ### PUT
 
 PUT {{UserManagementAPI_HostAddress}}/api/Users/1
+Authorization: Bearer {{SecretKey}}
 Content-Type: application/json
 
 {
@@ -33,9 +37,17 @@ Content-Type: application/json
 ### DELETE
 
 DELETE {{UserManagementAPI_HostAddress}}/api/Users/1
+Authorization: Bearer {{SecretKey}}
 Content-Type: application/json
 
 ### MiddleWare to get route counts
 
 GET {{UserManagementAPI_HostAddress}}/api/Users/route-counts
+Authorization: Bearer {{SecretKey}}
+Content-Type: application/json
+
+### MiddleWare to Error Handling
+
+GET {{UserManagementAPI_HostAddress}}/api/Users/eee
+Authorization: Bearer {{SecretKey}}
 Content-Type: application/json

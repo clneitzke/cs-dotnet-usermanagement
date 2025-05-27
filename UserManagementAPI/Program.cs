@@ -11,8 +11,10 @@ if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
 }
-
+app.UseMiddleware<UserManagementAPI.Middleware.ErrorHandlingMiddleware>();
+app.UseMiddleware<UserManagementAPI.Middleware.AuthenticationMiddleware>();
 app.UseMiddleware<UserManagementAPI.Middleware.ApiCallCounterMiddleware>();
+app.UseMiddleware<UserManagementAPI.Middleware.RequestResponseLoggingMiddleware>();
 
 app.MapControllers();
 
