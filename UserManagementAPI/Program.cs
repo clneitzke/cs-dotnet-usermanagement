@@ -12,6 +12,8 @@ if (app.Environment.IsDevelopment())
     app.MapOpenApi();
 }
 
+app.UseMiddleware<UserManagementAPI.Middleware.ApiCallCounterMiddleware>();
+
 app.MapControllers();
 
 app.MapGet("/", () => "Hello world!");

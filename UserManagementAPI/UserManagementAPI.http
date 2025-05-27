@@ -1,14 +1,16 @@
 @UserManagementAPI_HostAddress = http://localhost:5298
 
+### OpenAPI Specification
+
 GET {{UserManagementAPI_HostAddress}}/openapi/v1.json
 Accept: application/json
 
-###
+### GET
 
 GET {{UserManagementAPI_HostAddress}}/api/Users
 Accept: application/json
 
-###
+### POST
 
 POST {{UserManagementAPI_HostAddress}}/api/Users
 Content-Type: application/json
@@ -18,7 +20,7 @@ Content-Type: application/json
     "email": "test@email.ca"
 }
 
-###
+### PUT
 
 PUT {{UserManagementAPI_HostAddress}}/api/Users/1
 Content-Type: application/json
@@ -28,7 +30,12 @@ Content-Type: application/json
     "email": "test1@email.ca"
 }
 
-###
+### DELETE
 
 DELETE {{UserManagementAPI_HostAddress}}/api/Users/1
+Content-Type: application/json
+
+### MiddleWare to get route counts
+
+GET {{UserManagementAPI_HostAddress}}/api/Users/route-counts
 Content-Type: application/json

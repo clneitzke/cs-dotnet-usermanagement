@@ -102,4 +102,10 @@ public class UsersController : ControllerBase
             return NoContent();
         }
     }
+    
+    [HttpGet("route-counts")]
+    public ActionResult<IDictionary<string, int>> GetRouteCounts()
+    {
+        return Ok(UserManagementAPI.Middleware.ApiCallCounterMiddleware.GetRouteCounts());
+    }
 }
